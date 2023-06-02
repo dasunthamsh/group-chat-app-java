@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="694.0" prefWidth="440.0" style="-fx-background-color: #252525;" stylesheets="@../../../../../chat/Live-chat-Application/src/lk/ijse/group_chat_application/view/style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginForm">
+   <children>
+      <AnchorPane layoutX="59.0" layoutY="356.0" prefHeight="50.0" prefWidth="322.0" style="-fx-background-color: white; -fx-background-radius: 15;">
+         <children>
+            <JFXTextField fx:id="txtUserName" layoutX="45.0" layoutY="14.0" prefHeight="30.0" prefWidth="214.0">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+      <JFXButton buttonType="RAISED" layoutX="175.0" layoutY="438.0" onAction="#btnLoginOnAction" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #e7a930; -fx-background-radius: 15;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="82.0" fitWidth="90.0" layoutX="179.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/profile.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

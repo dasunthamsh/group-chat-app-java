@@ -14,7 +14,7 @@ public class Appinitilizer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/ijse/group_chat_application/view/login-from.fxml"));
+        Parent parent = FXMLLoader.load(this.getClass().getResource("/view/LoginForm.fxml"));
         Scene mainScene = new Scene(parent);
         primaryStage.setTitle("Live Chat");
         primaryStage.setScene(mainScene);
