@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<AnchorPane prefHeight="694.0" prefWidth="440.0" style="-fx-background-color: #252525;" stylesheets="@../../../../../chat/Live-chat-Application/src/lk/ijse/group_chat_application/view/style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientOneForm">
+   <children>
+      <Label fx:id="lblUser" layoutX="91.0" layoutY="14.0" prefHeight="11.0" prefWidth="127.0" textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold" size="30.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="344.0" layoutY="641.0" onAction="#sendOnAction" prefHeight="33.0" prefWidth="63.0" style="-fx-background-color: #e7a930;" text="SEND" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <ScrollPane layoutX="4.0" layoutY="62.0" prefHeight="546.0" prefWidth="433.0">
+         <content>
+            <VBox fx:id="vBox" prefHeight="543.0" prefWidth="428.0" />
+         </content>
+      </ScrollPane>
+      <AnchorPane layoutX="14.0" layoutY="640.0" prefHeight="33.0" prefWidth="314.0" style="-fx-background-radius: 10px;" styleClass="textPane">
+         <children>
+            <JFXTextField fx:id="txtTextField" layoutX="14.0" layoutY="6.0" prefHeight="27.0" prefWidth="220.0">
+               <font>
+                  <Font name="Consolas" size="13.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fx:id="imgSendImages" fitHeight="25.0" fitWidth="25.0" layoutX="275.0" layoutY="2.0" onMouseClicked="#sendImgClicked">
+               <image>
+                  <Image url="@../assests/camera.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="51.0" fitWidth="46.0" layoutX="15.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/profile.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
