@@ -3,12 +3,14 @@ package controller;/*
 */
 
 import com.jfoenix.controls.JFXTextField;
+import com.sun.xml.internal.messaging.saaj.soap.impl.TextImpl;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -61,6 +63,43 @@ public class ClientOneForm  extends Thread{
         this.path = fileChooser.showOpenDialog(stage);
         printWriter.println(lblUser.getText()+""+"img"+path.getPath());
         printWriter.flush();
+    }
+
+
+    public void run{
+        try {
+
+            while (true){
+                String massage = bufferedReader.readLine();
+                String[] tokens = massage.split("");
+                String command = tokens[0];
+
+                StringBuilder clientMassage = new StringBuilder();
+                for (int i = 1; i < tokens.length; i++) {
+                    clientMassage.append(tokens[i] +"");
+
+                }
+
+                String[] massageAr = massage.split("");
+                String string ="";
+                for (int i = 0; i < massageAr.length; i++) {
+                    string += massageAr[i + 1] + "";
+
+                }
+
+
+                Text text = new Text(string);
+                String fChar = "";
+
+                if (string.length()>3){
+                    fChar = string.substring(0,3);
+                }
+
+            }
+
+        }catch (Exception e){
+
+        }
     }
 
 
