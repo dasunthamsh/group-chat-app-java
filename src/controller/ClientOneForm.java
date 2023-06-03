@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.Socket;
@@ -42,8 +43,17 @@ public class ClientOneForm  extends Thread{
 
         String massage = txtTextField.getText();
         printWriter.println(lblUser.getText()+" : "+massage);
+        txtTextField.clear();
+        printWriter.flush();
+        if(massage.equalsIgnoreCase("exit")){
+            Stage stage = (Stage) txtTextField.getScene().getWindow();
+            stage.close();
+        }
     }
 
+
     public void sendImgClicked(MouseEvent mouseEvent) {
+
+
     }
 }
