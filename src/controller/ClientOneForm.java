@@ -4,13 +4,18 @@ package controller;/*
 
 import com.jfoenix.controls.JFXTextField;
 import com.sun.xml.internal.messaging.saaj.soap.impl.TextImpl;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -66,7 +71,7 @@ public class ClientOneForm  extends Thread{
     }
 
 
-    public void run{
+    public void run() {
         try {
 
             while (true){
@@ -93,6 +98,55 @@ public class ClientOneForm  extends Thread{
 
                 if (string.length()>3){
                     fChar = string.substring(0,3);
+                }
+
+                if(fChar.equalsIgnoreCase("img")){
+                    string = string.substring(3,string.length() -1);
+
+
+                    File file = new File(string);
+                    Image image = new Image(file.toURI().toString());
+
+                    ImageView imageView = new ImageView(image);
+
+                    imageView.setFitWidth(150);
+                    imageView.setFitHeight(200);
+
+                    HBox hBox = new HBox(10);
+                    hBox.setAlignment(Pos.BOTTOM_RIGHT);
+
+
+                    if (!command.equalsIgnoreCase(lblUser.getText())){
+                        vBox.setAlignment(Pos.TOP_LEFT);
+                        hBox.setAlignment(Pos.CENTER_LEFT);
+
+                        Text text1 = new Text(""+command+" : ");
+                        hBox.getChildren().add(text1);
+                        hBox.getChildren().add(imageView);
+                    }else {
+                        hBox.setAlignment(Pos.BOTTOM_RIGHT);
+                        hBox.getChildren().add(imageView);
+                        Text text1 = new Text(": Me");
+                        hBox.getChildren().add(text1);
+
+                    }
+
+                    Platform.runLater(() -> vBox.getChildren().addAll(hBox));
+
+                }else {
+                    TextFlow tempTextFlow = new TextFlow();
+
+                    if(!command.equalsIgnoreCase(lblUser.getText() + " : ")){
+                        Text name = new Text(command + "");
+                        name.getStyleClass().add("name");
+                        tempTextFlow.getChildren().add(name);
+                    }
+
+                    tempTextFlow.getChildren().add(text);
+                    tempTextFlow.setMaxWidth(200);
+
+                    TextFlow textFlow = new TextFlow();
+                    HBox hBox = new HBox(12);
                 }
 
             }
