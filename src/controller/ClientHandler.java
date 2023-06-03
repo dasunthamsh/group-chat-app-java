@@ -8,29 +8,29 @@ import java.util.ArrayList;
 
 public class ClientHandler extends Thread {
 
-
-    public static ArrayList<ClientHandler> clientHandlers;
+    public static ArrayList<ClientHandler> clientHandlerArrayList;
     private Socket socket;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
-    private String clientUseName;
+    private String clientUsername;
     private PrintWriter printWriter;
 
-    public ClientHandler(Socket socket, ArrayList<ClientHandler> clientHandlerArrayList) {
+    public ClientHandler(Socket socket,ArrayList<ClientHandler>clientHandlers){
+        try{
+            this.socket = socket;
+            this.clientHandlerArrayList =clientHandlers;
+            this.bufferedReader= new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            this.printWriter=new PrintWriter(socket.getOutputStream(),true);
 
-        this.socket=socket;
-        this.clientHandlers=clientHandlerArrayList;
-        try {
-            this.bufferedReader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            this.printWriter=new PrintWriter(socket.getOutputStream());
-        } catch (IOException e) {
 
+        }catch (IOException e){
+            e.printStackTrace();
         }
-
     }
 
 
-    public void run(){
+
+    public void run() {
 
         try{
             String massage;
@@ -39,7 +39,7 @@ public class ClientHandler extends Thread {
                     break;
                 }
 
-                for(ClientHandler c : clientHandlers) {
+                for(ClientHandler c : clientHandlerArrayList) {
                     c.printWriter.println(massage);
                 }
             }
@@ -59,4 +59,7 @@ public class ClientHandler extends Thread {
 
 
     }
+
+
+
 }
