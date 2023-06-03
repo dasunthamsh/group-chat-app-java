@@ -18,7 +18,7 @@
             </JFXTextField>
          </children>
       </AnchorPane>
-      <JFXButton buttonType="RAISED" layoutX="175.0" layoutY="438.0" onAction="#btnLoginOnAction" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #e7a930; -fx-background-radius: 15;" text="Login" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="175.0" layoutY="438.0" onAction="#btnLoginOnAction" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #008fff; -fx-background-radius: 15;" text="Login" textFill="WHITE">
          <font>
             <Font name="Consolas Bold" size="18.0" />
          </font>
