@@ -4,6 +4,7 @@ package controller;/*
 
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -54,6 +55,13 @@ public class ClientOneForm  extends Thread{
 
     public void sendImgClicked(MouseEvent mouseEvent) {
 
-
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image");
+        this.path = fileChooser.showOpenDialog(stage);
+        printWriter.println(lblUser.getText()+""+"img"+path.getPath());
+        printWriter.flush();
     }
+
+
 }
