@@ -17,7 +17,7 @@
             <Font name="Consolas Bold" size="30.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="344.0" layoutY="641.0" onAction="#sendOnAction" prefHeight="33.0" prefWidth="63.0" style="-fx-background-color: #008fff;" text="SEND" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="363.0" layoutY="640.0" onAction="#sendOnAction" prefHeight="33.0" prefWidth="63.0" style="-fx-background-color: #008fff;" text="SEND" textFill="WHITE">
          <font>
             <Font name="Georgia Bold" size="14.0" />
          </font>
@@ -27,9 +27,9 @@
             <VBox fx:id="vBox" prefHeight="543.0" prefWidth="428.0" />
          </content>
       </ScrollPane>
-      <AnchorPane layoutX="14.0" layoutY="640.0" prefHeight="33.0" prefWidth="314.0" style="-fx-background-radius: 10px;" styleClass="textPane">
+      <AnchorPane layoutX="54.0" layoutY="640.0" prefHeight="33.0" prefWidth="290.0" style="-fx-background-radius: 10px;" styleClass="textPane">
          <children>
-            <JFXTextField fx:id="txtTextField" layoutX="14.0" layoutY="6.0" prefHeight="27.0" prefWidth="220.0" styleClass="text-input" stylesheets="@../style/style.css">
+            <JFXTextField fx:id="txtTextField" layoutX="55.0" layoutY="3.0" prefHeight="27.0" prefWidth="220.0" styleClass="text-input" stylesheets="@../style/style.css">
                <font>
                   <Font name="Consolas" size="13.0" />
                </font>
@@ -44,6 +44,11 @@
       <ImageView fitHeight="51.0" fitWidth="46.0" layoutX="15.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/profile.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgSendImages1" fitHeight="25.0" fitWidth="25.0" layoutX="12.0" layoutY="645.0" onMouseClicked="#mojOnAction">
+         <image>
+            <Image url="@../assests/smile.png" />
          </image>
       </ImageView>
    </children>

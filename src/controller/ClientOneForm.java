@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -21,6 +22,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class ClientOneForm  extends Thread{
 
@@ -30,6 +32,7 @@ public class ClientOneForm  extends Thread{
     public Label lblUser;
     public FileChooser chooser;
     public File path;
+    public ImageView imgSendImages1;
     private Socket socket;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
@@ -182,5 +185,25 @@ public class ClientOneForm  extends Thread{
             e.printStackTrace();
         }
     }
+
+
+    public void mojOnAction(MouseEvent mouseEvent) {
+        if (mouseEvent.getSource() instanceof ImageView)  if (mouseEvent.getSource() instanceof ImageView) {
+            ImageView icon = (ImageView) mouseEvent.getSource();
+            switch (icon.getId()) {
+                case "imgSendImages1":
+                    //heart
+                    byte[] byte1 = {(byte) 0xE2, (byte) 0x9D, (byte) 0xA4};
+                    String emoji1AsString = new String(byte1, StandardCharsets.UTF_8);
+                    txtTextField.appendText(emoji1AsString);
+                    break;
+            }
+        }
+
+    }
+
+
+
+
 
 }
